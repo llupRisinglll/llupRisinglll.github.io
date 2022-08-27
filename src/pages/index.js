@@ -127,9 +127,8 @@ const IndexPage = () => (
 								alt=""
 							/>
 
-							<input type="number" placeholder="1" defaultValue={0}  style={{width: 100}} />
+							<input type="number" placeholder="1" defaultValue={0}  style={{width: 100}}   min={0} />
 
-							
 							<StaticImage
 								src="../images/materials/glitter.png"
 								loading="eager"
@@ -138,7 +137,7 @@ const IndexPage = () => (
 								alt=""
 							/>
 
-							<input type="number" placeholder="1" defaultValue={0}  style={{width: 100}} />
+							<input type="number" placeholder="1" defaultValue={0}  style={{width: 100}}  min={0}/>
 
 							<span>500,000</span>
 
@@ -146,7 +145,41 @@ const IndexPage = () => (
 					</li>
 
 					<li style={{borderLeft: "1px solid #242E45"}}>
-						<h3>Resources you need</h3>
+						<h3 style={{marginTop: 0}}>Resources you need</h3>
+						<div>
+							<StaticImage
+								src="../images/currency/darksteel.png"
+								loading="eager"
+								quality={95}
+								formats={["auto", "webp", "avif"]}
+								alt=""
+							/>
+							123213213
+						</div>
+
+						<div>
+							<StaticImage
+								src="../images/currency/copper.png"
+								loading="eager"
+								quality={95}
+								formats={["auto", "webp", "avif"]}
+								alt=""
+							/>
+
+							123123123
+						</div>
+
+						<div>
+							<StaticImage
+								src="../images/materials/glitter.png"
+								loading="eager"
+								quality={95}
+								formats={["auto", "webp", "avif"]}
+								alt=""
+							/>
+							123123123
+						</div>
+						
 						<h3>Materials you need</h3>
 					</li>
 
