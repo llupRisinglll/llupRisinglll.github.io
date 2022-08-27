@@ -1,47 +1,21 @@
 .list {
-  display: grid;
-  margin: 0;
-  /* https://css-tricks.com/responsive-layouts-fewer-media-queries/ */
-  --w: 280px;
-  --n: 2;
-  gap: var(--size-gap);
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(max(var(--w), 100%/ (var(--n) + 1) + 0.1%), 1fr)
-  );
-  margin-bottom: var(--size-gap);
-  margin-top: var(--size-gap);
+	display: grid;
+	margin: 0;
+	/* https://css-tricks.com/responsive-layouts-fewer-media-queries/ */
+	--w: 280px;
+	--n: 2;
+	gap: var(--size-gap);
+	grid-template-columns: repeat(
+	auto-fit,
+	minmax(max(var(--w), 100%/ (var(--n) + 1) + 0.1%), 1fr)
+	);
+	margin-bottom: var(--size-gap);
+	margin-top: 20px;
+	text-align: left;
 }
 
-.listItem {
-  margin: 0;
-}
-
-.listItem::marker {
-  color: #e95800;
-}
-
-.listItem:nth-child(2)::marker {
-  color: #159bf3;
-}
-
-.listItem:nth-child(3)::marker {
-  color: #8eb814;
-}
-
-.listItem:nth-child(4)::marker {
-  color: #663399;
-}
-
-.listItemLink {
-  color: var(--color-primary);
-  font-weight: bold;
-}
-
-.listItemDescription {
-  color: var(--color-text);
-  margin-bottom: 0;
-  margin-top: var(--space-1);
+.list > li{
+	padding: 10px;
 }
 
 .textCenter {
@@ -51,4 +25,98 @@
 .intro {
   max-width: none;
   line-height: var(--line-height-loose);
+}
+
+
+.craft_option{
+	height: 54px;
+	background-color: #0F1627;
+	border-bottom: 1px solid #242E45;
+	text-align: left;
+}
+
+.craft_option > div {
+	display: inline-block;
+	font-size: 18px;
+	color: #727375;
+	padding: 13px 10px;
+	padding-right: 0;
+	cursor: pointer;
+	position: relative;
+}
+
+.craft_option > div > div.label {
+	border-right: 1px solid #242E45;
+	padding-right: 20px;
+}
+
+.craft_option > div.active {
+	color: #F4F4F4 !important;
+}
+
+
+.material_calc, .material_nav{
+	display: block;
+}
+
+.material_nav {
+	margin-top: 15px;
+	-moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   /*
+     Introduced in Internet Explorer 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+
+.material_nav > div {
+	float: left;
+	width: 192px;
+	margin-left: 10px;
+	height: 76px;
+	/* width: 192px; */
+	background: url("../images/bg/option-bg.png");
+	position: relative;
+	cursor: pointer;
+}
+
+.material_nav > div.active {
+	box-shadow: 0 0 10px #58a6ff;
+}
+
+.material_nav > div > div:first-child {
+	position: absolute;
+    top: 15px;
+    left: 15px;
+	z-index: 2;
+}
+
+.material_nav > div > div:nth-child(2) {
+	position: absolute;
+    bottom: 15px;
+    left: 25px;
+	z-index: 3;
+}
+
+.material_nav > div > span {
+    text-align: center;
+    display: block;
+    color: #727375;
+    font-size: 22px;
+}
+.material_nav > div:first-child > span {
+    font-size: 12px;
+}
+
+.material_nav > div > span {
+    margin-left: 61px;
+    padding: 20px 0px;
+    padding-right: 10px;
+}
+
+.material_nav > div:nth-child(2) > div {
+	top: 18px;
 }

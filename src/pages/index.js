@@ -1,122 +1,159 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
-
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+import { StaticImage } from "gatsby-plugin-image"
 
 const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
+	<Layout>
+		<Seo title="Home" />
+		<div className={styles.textCenter}>
+
+			<div style={{marginBottom: 20, fontStyle: "italic"}}>More features coming soon!</div>
+
+			<div className={styles.craft_option}>
+				<div>
+					<div className={styles.label}>Rare</div>
+				</div>
+				<div className={styles.active}>
+					<div className={styles.label}>Epic</div>
+				</div>
+				<div>
+					<div className={styles.label}>Legendary</div>
+				</div>
+			</div>
+			<div>
+				<div style={{height: 85}}>
+					<div className={styles.material_nav}>
+						<div className={styles.active}>
+							<StaticImage
+								src="../images/materials/scale_e.png"
+								loading="eager"
+								quality={95}
+								formats={["auto", "webp", "avif"]}
+								alt=""
+							/>
+							<StaticImage
+								src="../images/materials/claw_e.png"
+								loading="eager"
+								quality={95}
+								formats={["auto", "webp", "avif"]}
+								alt=""
+							/>
+
+							<span>Weapon/Secondary Weapon</span>
+						</div>
+
+						<div>
+							<StaticImage
+								src="../images/materials/leather_e.png"
+								loading="eager"
+								quality={95}
+								formats={["auto", "webp", "avif"]}
+								alt=""
+							/>
+							<span>Armor</span>
+						</div>
+						<div>
+							<StaticImage
+								src="../images/materials/horn_e.png"
+								loading="eager"
+								quality={95}
+								formats={["auto", "webp", "avif"]}
+								alt=""
+							/>
+							
+							<StaticImage
+								src="../images/materials/eye_e.png"
+								loading="eager"
+								quality={95}
+								formats={["auto", "webp", "avif"]}
+								alt=""
+							/>
+							<span>Accesories</span>
+						</div>
+
+					</div>
+				</div>
+
+				<ul className={styles.list} style={{listStyleType: "none"}}>
+					<li>
+						<div>
+							<span>Select craft quantity</span> <input type="number" placeholder="1" defaultValue={1} />	
+						</div>	
+						<div>
+							<h5 style={{margin: 0, marginTop: 20}}>Currency Owned:</h5>
+							<span style={{fontStyle: "italic", fontSize: 11}}>Check your inventory and enter your available darksteel and copper</span>
+						</div>
+
+						<div>
+							
+							<StaticImage
+								src="../images/currency/darksteel.png"
+								loading="eager"
+								quality={95}
+								formats={["auto", "webp", "avif"]}
+								alt=""
+							/>
+
+							<input type="number" placeholder="1" defaultValue={0} />
+						</div>
+
+						<div>
+							
+							<StaticImage
+								src="../images/currency/copper.png"
+								loading="eager"
+								quality={95}
+								formats={["auto", "webp", "avif"]}
+								alt=""
+							/>
+							<input type="number" placeholder="1" defaultValue={0} />
+						</div>
+
+						<div>
+							<h5 style={{margin: 0, marginTop: 20}}>Materials Owned:</h5>
+							<span style={{fontStyle: "italic", fontSize: 11}}>Check your inventory and enter the quantity of material you have</span>
+						</div>
+
+						<div>
+							
+							<StaticImage
+								src="../images/materials/glitter.png"
+								loading="eager"
+								quality={95}
+								formats={["auto", "webp", "avif"]}
+								alt=""
+							/>
+
+							<input type="number" placeholder="1" defaultValue={0}  style={{width: 100}} />
+
+							
+							<StaticImage
+								src="../images/materials/glitter.png"
+								loading="eager"
+								quality={95}
+								formats={["auto", "webp", "avif"]}
+								alt=""
+							/>
+
+							<input type="number" placeholder="1" defaultValue={0}  style={{width: 100}} />
+
+							<span>500,000</span>
+
+						</div>
+					</li>
+
+					<li style={{borderLeft: "1px solid #242E45"}}>
+						<h3>Resources you need</h3>
+						<h3>Materials you need</h3>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</Layout>
 )
 
 /**
